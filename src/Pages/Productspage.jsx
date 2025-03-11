@@ -1,5 +1,8 @@
 import Card from "../components/Card"
+import Loder from "../components/Loder"
 import { useproducts } from "../context/ProductsContext"
+
+import styles from "./productspage.module.css"
 
 
 function Productspage() {
@@ -8,11 +11,17 @@ function Productspage() {
     console.log(products)
 
   return (
-    <div>
-{products.map((p) => <Card key={p.id} data={p}/>)}
-{!products.length && <p>loding...</p>}
+  <div className={styles.container}>
+    <div className={styles.products} >
+    {!products.length && <Loder/>}
+    {products.map((p) => <Card key={p.id} data={p}/>)}
+    </div> 
+   <div>
+    sidebar
+   </div>
 
-    </div>  
+     
+  </div>
   )
 } 
 
