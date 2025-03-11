@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react"
+
 import Card from "../components/Card"
 import Loder from "../components/Loder"
+import Search from "../components/Search"
 import { useproducts } from "../context/ProductsContext"
 
 import styles from "./productspage.module.css"
@@ -7,14 +10,23 @@ import styles from "./productspage.module.css"
 
 function Productspage() {
 
-    const products=useproducts()
-    console.log(products)
+    const products=useproducts();
+    const [displayd,setdisplayd]=useState([]);
+    const [query,setquery]=useState({});
+
+    useEffect (() => {
+      setdisplayd(products)
+    },[products]);
+
+   
 
   return (
+    <>
+     <div><Search query={query} setquery={setquery} setdisplayd={setdisplayd} /></div>
   <div className={styles.container}>
     <div className={styles.products} >
-    {!products.length && <Loder/>}
-    {products.map((p) => <Card key={p.id} data={p}/>)}
+    {!displayd.length && <Loder/>}
+    {displayd.map((p) => <Card key={p.id} data={p}/>)}
     </div> 
    <div>
     sidebar
@@ -22,6 +34,7 @@ function Productspage() {
 
      
   </div>
+  </>
   )
 } 
 

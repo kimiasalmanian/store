@@ -8,7 +8,7 @@ function Loder() {
 <RingLoader
   color="#6a0eb3"
   size={90}
-  speedMultiplier={1}
+  speedMultiplier={3}
   />
 
  </div>
