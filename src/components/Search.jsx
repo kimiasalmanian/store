@@ -1,23 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
 import { useproducts } from '../context/ProductsContext'
-import { searchproducts } from '../helpes/helpe'
+
 
 import styles from "./search.module.css"
+import { createqueryobject } from '../helpes/helpe';
 
-function Search({query,setquery,setdisplayd}) {
+function Search({query,setquery,search,setsearch}) {
 const products=useproducts([]);
-const [search,setsearch]=useState("");
 
 
-useEffect (() => {
-    const finalproducts = searchproducts(products, query.search)
-    setdisplayd(finalproducts)
-} ,[query])
+
+
 
 const searchhandler=() => {
-    setquery((query) => ({...query,search}))
+    setquery((query) => createqueryobject(query, { search}))
 }
 
   return (
