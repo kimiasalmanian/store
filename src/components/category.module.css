@@ -1,0 +1,41 @@
+.category{
+    width: 200px;
+    height: fit-content;
+    margin: 10px;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #fff;
+    border: 2px dashed #e2e2e2;
+    border-radius: 20px;
+    }
+
+    .category div{
+        width: 200px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        color: #fe5d42;
+        font-weight: 500;
+    }
+
+    .category p{
+        margin-left: 10px;
+    }
+
+    .category li{
+        list-style: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .category li:hover{
+        color: #fe5d42;
+    }
+
+    .selected {
+     color: #fe5d42;
+     border-radius: 5px;
+     background-color: #f0b7ad;
+
+    
+    }

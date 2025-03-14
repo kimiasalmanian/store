@@ -1,8 +1,11 @@
 
 import { BiCategoryAlt } from 'react-icons/bi'
 import { createqueryobject } from '../helpes/helpe';
+import { categoris } from '../constans/list';
 
-function Category({setquery}) {
+import  styles from "./category.module.css"
+
+function Category({query,setquery}) {
 
     const categoryhandler=(event) => {
       const { tagName } = event.target;
@@ -12,17 +15,15 @@ function Category({setquery}) {
       setquery((query) => createqueryobject(query , { category }))
     }
   return (
-    <div>
+    <div className={styles.category}>
     <div><BiCategoryAlt/>
     <p>Category</p>
     </div>
     
         <ul onClick={categoryhandler}>
-            <li>ALL</li>
-            <li>Electronics</li>
-            <li>Jewelery</li>
-            <li>Men's Clothing</li>
-            <li>Women's Clothing</li>
+           {categoris.map((item)=>(<li key={item.id} 
+           className={item.type.toLowerCase()=== query.category ? styles.selected : null}>
+            {item.type}</li>))}
         </ul>
     
     </div>

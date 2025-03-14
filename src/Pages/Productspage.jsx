@@ -44,7 +44,7 @@ function Productspage() {
     {displayd.map((p) => <Card key={p.id} data={p}/>)}
     </div> 
    <div>
-    <Category  setquery={setquery}/> 
+    <Category  query={query} setquery={setquery}/> 
    </div>
 
      
