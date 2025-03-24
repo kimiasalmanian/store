@@ -4,13 +4,15 @@ import Datailspage from "./Pages/Datailspage"
 import Checkout from "./Pages/Checkout"
 import Pagenotfound from "./Pages/Pagenotfound"
 import ProductsProvider from "./context/ProductsContext"
+import CartProvider from "./context/Cartcontext"
 
 
 
 
 function App() {
  return (
-
+  
+<CartProvider>
 <ProductsProvider>
 
 <Routes>
@@ -22,6 +24,7 @@ function App() {
  </Routes>
 
 </ProductsProvider>
+</CartProvider>
  
   
 

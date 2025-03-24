@@ -8,7 +8,7 @@
     align-items: flex-start;
     justify-content: flex-end;
     background-color: #fff;
-    border: 2px dashed #e2e2e2;
+    border: 1.5px groove #8348a0;
     border-radius: 20px;
 }
 .card img{
@@ -20,7 +20,7 @@ background-color: #fff;
 }
 
 .card h3{
-    color: brown;
+    color: rgb(112, 2, 136);
     font-size: 1.1rem;
 }
 
@@ -45,7 +45,7 @@ background-color: #fff;
 .action a{
     font-size: 1.6rem;
     height: 25px;
-    color: brown;
+    color: rgb(158, 24, 184);
     cursor: pointer;
 }
 
@@ -64,7 +64,7 @@ background-color: #fff;
     
     border: none;
     background-color: #fff;
-    color: brown;
+    color: rgb(152, 50, 183);
     width: 32px;
     height: 32px;
     font-size: 1.7rem;

@@ -3,11 +3,11 @@
     
 }
 .search input{
-    border: 2px dashed #fe5d42;
+    border: 2px dashed #c557ed;
     padding: 10px;
     width: 250px;
     border-radius: 10px;
-    color: #fe5d42;
+    color: #67088a;
     font-size: 0.9rem;
     margin-right: 10px;
 
@@ -21,7 +21,7 @@
 
 .search button{
 
-    background-color: #fe5d42;
+    background-color: #5d027c;
     padding: 10px;
     font-size: 1rem;
     color: aliceblue;
