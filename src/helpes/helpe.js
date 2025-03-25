@@ -37,4 +37,12 @@ return query ;
 
 }
 
-export {shortentext,searchproducts , filterproducts ,createqueryobject ,getinitialquery}
+const sumproducts=(products) =>{
+const itemcounter= products.reduce((counter , products) => counter + products.quantity ,0
+)
+const total=products.reduce((total , products) => total + products.price * products.quantity ,0 ).toFixed(2)
+ 
+return {itemcounter , total }
+};
+
+export {shortentext,searchproducts , filterproducts ,createqueryobject ,getinitialquery ,sumproducts}
