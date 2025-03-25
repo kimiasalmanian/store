@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
-import { shortentext } from "../helpes/helpe"
+import { productsquantity, shortentext } from "../helpes/helpe"
 import { BiAlignRight, BiCartAlt } from "react-icons/bi"
 
 import styles from "./card.module.css"
 import { useCart } from "../context/Cartcontext"
+import { RiDeleteBin5Line } from "react-icons/ri"
 
 
 function Card({data}) {
@@ -12,9 +13,10 @@ const {image, id, title,price }=data
 
 const [state , dispatch]= useCart();
 console.log(state)
-const clickhandler =() => {
-  dispatch({type:"ADD_ITEM" , payload:data})
+const clickhandler =(type) => {
+  dispatch({ type , payload:data})
 }
+const quantity =productsquantity(state,id)
 
 
  
@@ -27,7 +29,21 @@ const clickhandler =() => {
     <p>{price} $</p>
   <div className={styles.action}>
     <Link to={`/products/${id}`}><BiAlignRight/></Link>
-    <button onClick={clickhandler}><BiCartAlt/></button>
+    <div>
+    {quantity>1 &&<button onClick={()=>clickhandler("DECREASE")}> - </button>}
+    {quantity===1 &&  <button onClick={()=>clickhandler("REMOVE_ITEM")}><RiDeleteBin5Line/></button> }
+    {!!quantity &&<span>{quantity}</span>}
+    {quantity===0 ? <button onClick={()=>clickhandler("ADD_ITEM")}><BiCartAlt/></button>
+    : 
+    <button onClick={()=>clickhandler("INCREASE")}> + </button>}
+    </div>
+   
+  
+    
+   
+   
+    
+    
 
 
   </div>

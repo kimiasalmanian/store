@@ -20,9 +20,48 @@ const reducer = (state, action) =>{
                 ...state,
                 ...sumproducts(state.selecteditem),
                 checkout:false
+            };
+            case "REMOVE_ITEM":
+             const newselecteditem=state.selecteditem.filter((item) => item.id !== action.payload.id )
+            
+            return{
+                ...state,
+                selecteditem :[...newselecteditem],
+                ...sumproducts(newselecteditem)
             }
+
+            case "INCREASE":
+            const increaseindex=state.selecteditem.findIndex(
+                (item) => item.id===action.payload.id)
             
+            state.selecteditem[increaseindex].quantity++;
+
+            return{
+                ...state,
+                ...sumproducts(state.selecteditem),
+
+            }
+
+            case "DECREASE":
+                const dicreaseindex=state.selecteditem.findIndex(
+                    (item) => item.id === action.payload.id)
+            state.selecteditem[dicreaseindex].quantity--;
+
+            return{
+            ...state,
+            ...sumproducts(state.selecteditem),
             
+            }
+
+            case "CHECKOUT":
+            
+            return{
+            checkout:true,
+            total:0,
+            selecteditem:[],
+            itemcounter:0,
+
+            }
             
     
         default:

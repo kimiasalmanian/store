@@ -45,4 +45,13 @@ const total=products.reduce((total , products) => total + products.price * produ
 return {itemcounter , total }
 };
 
-export {shortentext,searchproducts , filterproducts ,createqueryobject ,getinitialquery ,sumproducts}
+const productsquantity= (state, id) => {
+    const index=state.selecteditem.findIndex((item) => item.id===id )
+    if(index=== -1) {return 0;}
+    else {return state.selecteditem[index].quantity}
+    
+    
+    }
+
+
+export {shortentext,searchproducts , filterproducts ,createqueryobject ,getinitialquery ,sumproducts, productsquantity}
