@@ -42,5 +42,11 @@ const useproducts = () => {
     return products
 };
 
+const useproductsdatails=(id) =>{
+    const products = useContext(ProductsContext)   
+    const result= products.find((products) => products.id=== id)
+    return result
+}
+
 export default ProductsProvider;
-export {useproducts};
+export {useproducts , useproductsdatails};
