@@ -8,6 +8,7 @@ function Basketcart({data , clickhandler}) {
   return (
     <div className={styles.card}>
         <img src={data.image} alt={data.title}/>
+        <h4>{data.price}$</h4>
         <h4>{shortentext(data.title)}</h4>
         <div  className={styles.action}>
             {data.quantity ===1 && <button onClick={() => clickhandler("REMOVE_ITEM" , data)}><RiDeleteBin5Line/></button>}
