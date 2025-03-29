@@ -12,7 +12,7 @@ const {image, id, title,price }=data
 
 
 const [state , dispatch]= useCart();
-console.log(state)
+
 const clickhandler =(type) => {
   dispatch({ type , payload:data})
 }
